@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>abacus</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+ 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+ 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+ 	<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+ 	<script type="text/javascript" src="js/scripts.js"></script>
+  </head>
+<body>
+	<div class='container'>
+		<div class='row'>
+			<div class='span8 offset2'>			
+				<h1>ABACUS</h1>
+				<h4>a simple, visual table math validator for html emails</h4>
+			</div>
+		</div>
+		
+		<div id="input" class='row'>
+			<div class='span8 offset2'>			
+				<h2>Paste HTML In Here</h2>
+				<textarea id='html-input' class="input-xlarge span8" rows='20'></textarea>
+				<input type='button' value='Analyze!' id='btn-analyze' class='btn btn-primary btn-large span8'/>
+			</div>
+		</div>
+
+		<div id='output' class='row'>
+			<div class='span8 offset2'>						
+				<div id='status'>
+					<div class="alert alert-success">
+					 <h1 class="alert-heading">Congratulations!</h1>
+					 Things look great and seem to check out!
+					</div>
+
+					<div class="alert alert-error">
+					 <h1 class="alert-heading">Drats!</h1>
+					 Looks like you need to tweak your table math a litte more.
+					</div>
+				</div>
+			</div>
+			
+			<div id='table-actual'></div>
+			<div id='table-computed'></div>
+		</div>
+		
+	</div>
+ </body>
+</html>
