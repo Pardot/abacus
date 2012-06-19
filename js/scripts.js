@@ -1,4 +1,4 @@
-var $tableActual, $htmlInput;
+var $tableActual, $tableComputed, $htmlInput;
 
 function drawTable(structure) {
 	
@@ -17,14 +17,22 @@ function analyzeHTML () {
 	
 	// check for table
 	
-	// dump into #table-actual
+	// dump into #table-actual and #table-computed
 	$(html).appendTo($tableActual);
+	$(html).appendTo($tableComputed);
 	
+	$tableComputed.find("td").each(function(){
+		var cellH = $(this).outerHeight(true);
+		var cellW = $(this).outerWidth(true);
+		$(this).width(cellW).height(cellH).empty();
+	});
+	
+	var tableActualOffset = $tableActual.find('table:first').offset();
+	
+	$tableComputed.css({"left": tableActualOffset.left});
+			
 	// now run tests on each row
 	var rowWidth;
-	$("#table-actual").each(function(){
-		
-	});
 	
 	if(true == false) {
 		$('#output .alert-error').show();
@@ -34,12 +42,14 @@ function analyzeHTML () {
 }
 
 $(function(){
-	$tableActual = $('#table-actual');
+	$('#table-actual').contents().find('body').css({"margin": 0, "padding" : 0}).append('<center/>');
+	$tableActual = $('#table-actual').contents().find('center');
+	$tableComputed = $('#table-computed');
 	$htmlInput = $('#html-input');
 	
 	$('#btn-analyze').click(function(){
-		analyzeHTML();
 		focusOutput();
+		analyzeHTML();
 	});
 		
 	//size input / output areas

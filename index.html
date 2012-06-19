@@ -22,29 +22,35 @@
 		
 		<div id="input" class='row'>
 			<div class='span8 offset2'>			
-				<h2>Paste HTML In Here</h2>
+				<h2 class='centered'><i class='icon-arrow-down'></i> Paste HTML In Here <i class='icon-arrow-down'></i></h2>
 				<textarea id='html-input' class="input-xlarge span8" rows='20'></textarea>
 				<input type='button' value='Analyze!' id='btn-analyze' class='btn btn-primary btn-large span8'/>
 			</div>
 		</div>
 
 		<div id='output' class='row'>
-			<div class='span8 offset2'>						
-				<div id='status'>
-					<div class="alert alert-success">
-					 <h1 class="alert-heading">Congratulations!</h1>
-					 Things look great and seem to check out!
-					</div>
+			<div class='row'>			
+				<div class='span8 offset2'>						
+					<div id='status'>
+						<div class="alert alert-success">
+						 <h1 class="alert-heading">Congratulations!</h1>
+						 Things look great and seem to check out!
+						</div>
 
-					<div class="alert alert-error">
-					 <h1 class="alert-heading">Drats!</h1>
-					 Looks like you need to tweak your table math a litte more.
+						<div class="alert alert-error">
+						 <h1 class="alert-heading">Drats!</h1>
+						 Looks like you need to tweak your table math a litte more.
+						</div>
 					</div>
 				</div>
 			</div>
 			
-			<div id='table-actual'></div>
-			<div id='table-computed'></div>
+			<div class='row'>
+				<div class='span8 offset2'>						
+					<iframe id='table-actual'></iframe>
+					<div id='table-computed'></div>
+				</div>
+			</div>
 		</div>
 		
 	</div>

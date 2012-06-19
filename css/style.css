@@ -28,3 +28,32 @@ body {
 #output .alert {
 	display:none;
 }
+
+.centered {
+	text-align:center;
+}
+
+#table-actual {
+	border:0;
+	display:block;
+	position:relative;
+	width:100%;
+}
+
+#table-computed {
+	position:absolute;
+	top:0;
+	z-index:500;
+}
+
+#table-computed table {
+	border:1px solid red !important;
+}
+
+	
+
+.span8.offset2 {position:relative;}
+
+h2 i {
+	margin-top:7px;
+}
